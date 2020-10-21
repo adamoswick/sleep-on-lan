@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/sleep-on-lan
+ExecStart=/usr/local/bin/sleep-on-lan --log-file=/var/log/sleep-on-lan.log
 Restart=on-failure
 RestartSec=10
 KillMode=process

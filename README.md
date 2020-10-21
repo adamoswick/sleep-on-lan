@@ -10,5 +10,15 @@ Contains the options:
   - --test-mode 
       - Don't poweroff, just log attempts
 
+
 Example:
   - sleep-on-lan --log-path=/var/log/sleep-on-lan.log --port=9 --test-mode=true
+
+
+To start on boot:
+  - Build the binary with `go build` 
+  - Move binary with `mv sleep-on-lan /usr/local/bin/sleep-on-lan`
+  - Move systemd unit file with `mv sleep-on-lan.service /etc/system/systemd/sleep-on-lan.service`
+  - Run `systemctl daemon-reload`
+  - Enable on boot with `systemctl enable sleep-on-lan`
+  - Start immediately with `systemctl start sleep-on-lan`
